@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="w-[80%] mx-auto my-12">
       <h1 className="font-bold text-3xl mb-4">
-        {CLASS_NAME} Progress Dashboard
+        {`${CLASS_NAME != null ? CLASS_NAME + " " : ""}`}Progress Dashboard
       </h1>
 
       <div className="relative overflow-x-auto">

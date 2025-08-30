@@ -9,4 +9,4 @@ export const EXERCISES: string[] = exercisesCsv.map(
   (row: { exercise_name: string }) => row.exercise_name,
 );
 
-export const CLASS_NAME = "TODO";
+export const CLASS_NAME: string | null = null;
