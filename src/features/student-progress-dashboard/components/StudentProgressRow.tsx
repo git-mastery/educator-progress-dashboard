@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useMemo } from "react";
-import {
-  useGetStudentExercisesQuery,
-  type StudentExercise,
-} from "../../../api/queries/get_student_exercises";
+import { type StudentExercise } from "../../../api/queries/get_student_exercises";
 import type { Exercise } from "../../../api/queries/get_exercises";
 import type { Student } from "../../../api/queries/get_students";
+import { useGetStudentExercisesQuery } from "../hooks/useGetStudentExercisesQuery";
 import type { OnRowComputed } from "../types";
 
 type StudentProgressRowProps = {

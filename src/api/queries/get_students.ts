@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useQuery } from "react-query";
 
 export interface Student {
   id: string;
@@ -18,11 +17,4 @@ export const getStudents = async () => {
   } catch {
     return [];
   }
-};
-
-export const useGetStudentsQuery = () => {
-  return useQuery<Student[]>({
-    queryKey: ["get-students"],
-    queryFn: () => getStudents(),
-  });
 };

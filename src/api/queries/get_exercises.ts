@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useQuery } from "react-query";
 
 export interface Exercise {
   exercise_name: string;
@@ -15,11 +14,4 @@ export const getExercises = async () => {
   } catch {
     return [];
   }
-};
-
-export const useGetExercisesQuery = () => {
-  return useQuery<Exercise[]>({
-    queryKey: ["get-exercises"],
-    queryFn: () => getExercises(),
-  });
 };

@@ -1,12 +1,10 @@
 import { useCallback, useRef } from "react";
 
-import {
-  useGetExercisesQuery
-} from "./api/queries/get_exercises";
-import { useGetStudentsQuery } from "./api/queries/get_students";
 import { DashboardHeader } from "./features/student-progress-dashboard/components/DashboardHeader";
 import { useCsvDownload } from "./features/student-progress-dashboard/hooks/useCsvDownload";
 import { DownloadCsvButton } from "./features/student-progress-dashboard/components/DownloadCsvButton";
+import { useGetExercisesQuery } from "./features/student-progress-dashboard/hooks/useGetExercisesQuery";
+import { useGetStudentsQuery } from "./features/student-progress-dashboard/hooks/useGetStudentsQuery";
 import { ProgressTable } from "./features/student-progress-dashboard/components/ProgressTable";
 import { useFilteredExercises } from "./features/student-progress-dashboard/hooks/useFilteredExercises";
 import { useFilteredStudents } from "./features/student-progress-dashboard/hooks/useFilteredStudents";

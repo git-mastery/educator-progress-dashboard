@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useQuery } from "react-query";
 import type { Exercise } from "./get_exercises";
 import type { Student } from "./get_students";
 
@@ -49,15 +48,4 @@ export const getStudentExercises = async (
   } catch {
     return new Map();
   }
-};
-
-export const useGetStudentExercisesQuery = (
-  studentId: string,
-  students: Student[],
-  exercises: Exercise[],
-) => {
-  return useQuery<Map<string, StudentExercise[]>>({
-    queryFn: () => getStudentExercises(studentId, students, exercises),
-    queryKey: [`get-student-exercises-${studentId}`],
-  });
 };
