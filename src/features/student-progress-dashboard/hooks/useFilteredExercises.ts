@@ -11,7 +11,7 @@ export const useFilteredExercises = (
     const exercisesSet = new Set(EXERCISES);
     const exercises =
       EXERCISES.length === 0
-        ? allExercises
+        ? [...allExercises]
         : allExercises.filter((exercise) =>
             exercisesSet.has(exercise.exercise_name),
           );

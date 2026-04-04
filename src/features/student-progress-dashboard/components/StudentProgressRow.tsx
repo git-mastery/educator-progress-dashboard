@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import {
   useGetStudentExercisesQuery,
   type StudentExercise,
@@ -52,22 +52,20 @@ export function StudentProgressRow({
     }
   }, []);
 
-  useMemo(() => {
+  const exerciseStatusRecord = useMemo(() => {
+    const latestExerciseStatusRecord: Record<string, string | undefined> = {};
+    filteredExercises.forEach((ex) => {
+      latestExerciseStatusRecord[ex.exercise_name] =
+        latestStatus.get(ex.exercise_name)?.exerciseProgress?.status ?? "";
+    });
+    return latestExerciseStatusRecord;
+  }, [filteredExercises, latestStatus]);
+
+  useEffect(() => {
     if (!isStudentProgressLoading) {
-      const statuses: Record<string, string | undefined> = {};
-      filteredExercises.forEach((ex) => {
-        statuses[ex.exercise_name] =
-          latestStatus.get(ex.exercise_name)?.exerciseProgress?.status ?? "";
-      });
-      onRowComputed({ username: student.username, statuses });
+      onRowComputed({ username: student.username, statuses: exerciseStatusRecord });
     }
-  }, [
-    student.username,
-    latestStatus,
-    filteredExercises,
-    onRowComputed,
-    isStudentProgressLoading,
-  ]);
+  }, [isStudentProgressLoading, onRowComputed, student.username, exerciseStatusRecord]);
 
   return (
     <tr className="bg-white border-b border-gray-200">

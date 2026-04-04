@@ -1,9 +1,11 @@
 import { CLASS_NAME } from "@config";
 
 export function DashboardHeader() {
+    const className = CLASS_NAME?.trim();
+
     return (
         <h1 className="font-bold text-3xl">
-            {`${CLASS_NAME != null ? CLASS_NAME + " " : ""}`}Progress Dashboard
+            {className ? `${className} ` : ""}Progress Dashboard
         </h1>
     )
 }

@@ -10,6 +10,7 @@ import { DownloadCsvButton } from "./features/student-progress-dashboard/compone
 import { ProgressTable } from "./features/student-progress-dashboard/components/ProgressTable";
 import { useFilteredExercises } from "./features/student-progress-dashboard/hooks/useFilteredExercises";
 import { useFilteredStudents } from "./features/student-progress-dashboard/hooks/useFilteredStudents";
+import type { OnRowComputed, ProgressRow } from "./features/student-progress-dashboard/types";
 
 function App() {
   const { data: allExercises, isLoading: isExercisesLoading } =
@@ -22,28 +23,20 @@ function App() {
 
   const filteredStudents = useFilteredStudents(allStudents, isStudentsLoading);
 
-  const tableDataRef = useRef<
-    { username: string; statuses: Record<string, string | undefined> }[]
-  >([]);
+  const tableDataRef = useRef<ProgressRow[]>([]);
 
   const { downloadCsv } = useCsvDownload({
     exercises: filteredExercises,
     getRows: () => tableDataRef.current
   });
 
-  const handleRowComputed = useCallback(
-    (row: {
-      username: string;
-      statuses: Record<string, string | undefined>;
-    }) => {
-      // Replace or add row by username
-      tableDataRef.current = [
-        ...tableDataRef.current.filter((r) => r.username !== row.username),
-        row,
-      ];
-    },
-    [],
-  );
+  const handleRowComputed = useCallback<OnRowComputed>((row) => {
+    // Replace or add row by username
+    tableDataRef.current = [
+      ...tableDataRef.current.filter((r) => r.username !== row.username),
+      row,
+    ];
+  }, []);
 
   return (
     <div className="w-[80%] mx-auto my-12">
