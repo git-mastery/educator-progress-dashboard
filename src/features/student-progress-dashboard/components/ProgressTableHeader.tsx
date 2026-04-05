@@ -1,4 +1,4 @@
-import type { Exercise } from "../../../api/queries/get_exercises";
+import type { Exercise } from "@/features/student-progress-dashboard/types";
 
 type ProgressTableHeaderProps = {
   filteredExercises: Exercise[];

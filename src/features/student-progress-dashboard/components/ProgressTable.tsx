@@ -1,8 +1,10 @@
-import type { Exercise } from "../../../api/queries/get_exercises";
-import type { Student } from "../../../api/queries/get_students";
-import { StudentProgressRow } from "./StudentProgressRow";
-import { ProgressTableHeader } from "./ProgressTableHeader";
-import type { OnRowComputed } from "../types";
+import { StudentProgressRow } from "@/features/student-progress-dashboard/components/StudentProgressRow";
+import { ProgressTableHeader } from "@/features/student-progress-dashboard/components/ProgressTableHeader";
+import type {
+  Exercise,
+  OnRowComputed,
+  Student,
+} from "@/features/student-progress-dashboard/types";
 
 type ProgressTableProps = {
   allStudents: Student[] | undefined;

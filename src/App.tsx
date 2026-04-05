@@ -1,14 +1,14 @@
 import { useCallback, useRef } from "react";
 
-import { DashboardHeader } from "./features/student-progress-dashboard/components/DashboardHeader";
-import { useCsvDownload } from "./features/student-progress-dashboard/hooks/useCsvDownload";
-import { DownloadCsvButton } from "./features/student-progress-dashboard/components/DownloadCsvButton";
-import { useGetExercisesQuery } from "./features/student-progress-dashboard/hooks/useGetExercisesQuery";
-import { useGetStudentsQuery } from "./features/student-progress-dashboard/hooks/useGetStudentsQuery";
-import { ProgressTable } from "./features/student-progress-dashboard/components/ProgressTable";
-import { useFilteredExercises } from "./features/student-progress-dashboard/hooks/useFilteredExercises";
-import { useFilteredStudents } from "./features/student-progress-dashboard/hooks/useFilteredStudents";
-import type { OnRowComputed, ProgressRow } from "./features/student-progress-dashboard/types";
+import { DashboardHeader } from "@/features/student-progress-dashboard/components/DashboardHeader";
+import { DownloadCsvButton } from "@/features/student-progress-dashboard/components/DownloadCsvButton";
+import { ProgressTable } from "@/features/student-progress-dashboard/components/ProgressTable";
+import { useCsvDownload } from "@/features/student-progress-dashboard/hooks/useCsvDownload";
+import { useFilteredExercises } from "@/features/student-progress-dashboard/hooks/useFilteredExercises";
+import { useFilteredStudents } from "@/features/student-progress-dashboard/hooks/useFilteredStudents";
+import { useGetExercisesQuery } from "@/features/student-progress-dashboard/hooks/useGetExercisesQuery";
+import { useGetStudentsQuery } from "@/features/student-progress-dashboard/hooks/useGetStudentsQuery";
+import type { OnRowComputed, ProgressRow } from "@/features/student-progress-dashboard/types";
 
 function App() {
   const { data: allExercises, isLoading: isExercisesLoading } =

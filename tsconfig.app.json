@@ -22,7 +22,8 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@config": ["config/gitmastery.config.ts"]
+      "@config": ["config/gitmastery.config.ts"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src", "config/gitmastery.config.ts"]

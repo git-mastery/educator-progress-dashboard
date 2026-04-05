@@ -1,6 +1,6 @@
 import { EXERCISES } from "@config";
 import { useMemo } from "react";
-import type { Exercise } from "../../../api/queries/get_exercises";
+import type { Exercise } from "@/features/student-progress-dashboard/types";
 
 export const useFilteredExercises = (
   allExercises: Exercise[] | undefined,

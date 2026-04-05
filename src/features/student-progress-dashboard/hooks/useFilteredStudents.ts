@@ -1,6 +1,6 @@
 import { STUDENTS } from "@config";
 import { useMemo } from "react";
-import type { Student } from "../../../api/queries/get_students";
+import type { Student } from "@/features/student-progress-dashboard/types";
 
 export const useFilteredStudents = (
   allStudents: Student[] | undefined,

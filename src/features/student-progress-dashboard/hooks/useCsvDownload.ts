@@ -1,6 +1,5 @@
 import { useCallback } from "react";
-import type { Exercise } from "../../../api/queries/get_exercises";
-import type { ProgressRow } from "../types";
+import type { Exercise, ProgressRow } from "@/features/student-progress-dashboard/types";
 
 type UseCsvDownloadParams = {
   exercises: Exercise[];
