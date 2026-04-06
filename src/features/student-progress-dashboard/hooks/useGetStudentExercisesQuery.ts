@@ -1,21 +1,11 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import type { Exercise } from "./get_exercises";
-import type { Student } from "./get_students";
-
-export interface ExerciseProgress {
-  exercise_name: string;
-  started_at: number;
-  completed_at: number;
-  comments: string[];
-  status: string;
-}
-
-export interface StudentExercise {
-  student: Student;
-  exercise: Exercise;
-  exerciseProgress: ExerciseProgress;
-}
+import type {
+  Exercise,
+  ExerciseProgress,
+  Student,
+  StudentExercise,
+} from "@/features/student-progress-dashboard/types";
 
 export const getStudentExercises = async (
   studentId: string,

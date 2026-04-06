@@ -1,10 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-
-export interface Student {
-  id: string;
-  username: string;
-}
+import type { Student } from "@/features/student-progress-dashboard/types";
 
 export const getStudents = async () => {
   try {
